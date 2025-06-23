@@ -7,7 +7,7 @@
   <title>YouTube Studio+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body onload="handleClientLoad()">
   <div id="app">
     <header>
       <h1>YouTube Studio+</h1>
@@ -32,6 +32,7 @@
       <p>Logged in as: <span id="userEmail">guest</span></p>
     </footer>
   </div>
+  <script src="https://apis.google.com/js/api.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
