@@ -3,6 +3,8 @@ document.getElementById('themeToggle').onclick = () => {
   document.body.classList.toggle('light-mode');
 };
 
+let chartInstance;
+
 document.getElementById('loginBtn').onclick = () => {
   document.getElementById('userEmail').innerText = "you@example.com";
   document.getElementById('subscriberCount').innerText = "1,204";
@@ -12,7 +14,10 @@ document.getElementById('loginBtn').onclick = () => {
 
 function drawChart() {
   const ctx = document.getElementById('videoChart').getContext('2d');
-  new Chart(ctx, {
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+  chartInstance = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Videos', 'Shorts'],
