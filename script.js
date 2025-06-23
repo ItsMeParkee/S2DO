@@ -1,29 +1,28 @@
 
-document.getElementById('themeToggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-});
-
-window.onload = function () {
-  // Simulated real-time subscriber count
-  document.getElementById('subscriberCount').innerText = '1,200';
-
-  // Placeholder chart setup
-  const ctx = document.getElementById('comparisonChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Videos', 'Shorts'],
-      datasets: [{
-        label: 'Performance',
-        data: [25, 75],
-        backgroundColor: ['#FF0000', '#00C853']
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: { beginAtZero: true }
-      }
-    }
-  });
+document.getElementById('themeToggle').onclick = () => {
+  document.body.classList.toggle('light-mode');
 };
+
+// Simulate dynamic data
+document.getElementById('subscriberCount').innerText = "1,204";
+document.getElementById('userEmail').innerText = "user@gmail.com";
+
+// Simulated chart
+const ctx = document.getElementById('videoChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Videos', 'Shorts'],
+    datasets: [{
+      label: 'Content Count',
+      data: [35, 84],
+      backgroundColor: ['#ff3d00', '#00e676']
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
